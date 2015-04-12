@@ -4,6 +4,14 @@ var url = require("url");
 function start(route, handle) {
 	function onRequest(request, response) {
 		var pathname = url.parse(request.url).pathname;
+		var realPath = "./assets" + pathname;
+		path.exits(realPath, function (exists) {
+			if (!exists) {
+			// Todo
+			} else {
+			// Todo
+			}
+		});
 		console.log("Request for " + pathname + " received.");
 
 		route(handle, pathname, response, request);
