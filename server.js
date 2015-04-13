@@ -1,20 +1,34 @@
 var http = require("http");
+var path = require("path");
+var fs = require("fs");
+var sys = require("sys");
 var url = require("url");
 
 function start(route, handle) {
 	function onRequest(request, response) {
 		var pathname = url.parse(request.url).pathname;
 		var realPath = "./assets" + pathname;
-		path.exits(realPath, function (exists) {
+		path.exists(realPath, function (exists) {
 			if (!exists) {
-			// Todo
+				response.writeHead(404, {'Content-Type': 'text/plain'});
+				response.write("I'm sorry, I don't find it.");
+				response.end();
 			} else {
-			// Todo
+				fs.readFile(realPath, "binary", function (err, file) {
+					if (err) {
+						response.writeHead(500, {'Content-Type': 'text/plain'});
+						response.end(err);
+					} else {
+						response.writeHead(200, {'Content-Type': 'text/html'});
+						response.write(file, "binary");
+						response.end();
+					}
+				});
 			}
 		});
 		console.log("Request for " + pathname + " received.");
 
-		route(handle, pathname, response, request);
+//		route(handle, pathname, response, request);
 
 //		request.addListener("data", function(postDataChunk) {
 //			postData += postDataChunk;
