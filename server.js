@@ -1,4 +1,5 @@
 var http = require("http");
+var mime = require("./mime").types;
 var path = require("path");
 var fs = require("fs");
 var sys = require("sys");
@@ -19,7 +20,10 @@ function start(route, handle) {
 						response.writeHead(500, {'Content-Type': 'text/plain'});
 						response.end(err);
 					} else {
-						response.writeHead(200, {'Content-Type': 'text/html'});
+						var ext = path.extname(realPath);
+						ext = ext ? ext.slice(1) : 'unknown';
+						var contentType = mime[ext] || "text/plain";
+						response.writeHead(200, {'Content-Type': contentType});
 						response.write(file, "binary");
 						response.end();
 					}
