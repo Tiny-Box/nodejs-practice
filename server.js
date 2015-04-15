@@ -9,6 +9,8 @@ function start(route, handle) {
 	function onRequest(request, response) {
 		var pathname = url.parse(request.url).pathname;
 		var realPath = "./assets" + pathname;
+		//if (realPath.search(".html") === -1)
+		//	realPath += ".html";
 		path.exists(realPath, function (exists) {
 			if (!exists) {
 				response.writeHead(404, {'Content-Type': 'text/plain'});
@@ -21,6 +23,8 @@ function start(route, handle) {
 						response.end(err);
 					} else {
 						var ext = path.extname(realPath);
+						console.log(realPath);
+						console.log(ext);
 						ext = ext ? ext.slice(1) : 'unknown';
 						var contentType = mime[ext] || "text/plain";
 						response.writeHead(200, {'Content-Type': contentType});
