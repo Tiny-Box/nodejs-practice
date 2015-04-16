@@ -23,8 +23,6 @@ function start(route, handle) {
 						response.end(err);
 					} else {
 						var ext = path.extname(realPath);
-						console.log(realPath);
-						console.log(ext);
 						ext = ext ? ext.slice(1) : 'unknown';
 						var contentType = mime[ext] || "text/plain";
 						response.writeHead(200, {'Content-Type': contentType});
@@ -38,13 +36,6 @@ function start(route, handle) {
 
 //		route(handle, pathname, response, request);
 
-//		request.addListener("data", function(postDataChunk) {
-//			postData += postDataChunk;
-//			console.log("Received POST data hunk '" + postDataChunk + "'.");		});
-//
-//		request.addListener("end", function() {
-//			route(handle, pathname, response, postData);
-//		});
 	}
 	
 	
