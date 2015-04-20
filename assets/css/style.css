@@ -54,7 +54,7 @@ rc.rtop rc.r4, rc.rbottom rc.r4{margin: 0 1px;height: 2px}
 .k{height:100px}
 
 .main{
-	width: 800px;
+	width: 100%;
 	background: red;
 }
 .main .col1{
@@ -76,13 +76,13 @@ rc.rtop rc.r4, rc.rbottom rc.r4{margin: 0 1px;height: 2px}
 	clear:both
 }
 
-.main,.content,.side{
+div.mainpage,.content,.side{
 	height: 200px;
 }
-.main,.side{
+div.mainpage,.side{
 	float: right;
 }
-.main{
+div.mainpage{
 	width: 100%;
 	margin-right: -200px;
 	background: green;
@@ -94,4 +94,24 @@ rc.rtop rc.r4, rc.rbottom rc.r4{margin: 0 1px;height: 2px}
 .side{
 	width: 200px;
 	background: red;
+}
+
+.left-col{
+	width: 300px;
+	height: 300px;
+	float: left;
+	background-color: blue;
+}
+.center-col{
+	height: 300px;
+	margin-left: 300px;
+	margin-right: 300px;
+	background-color: green;
+}
+.right-col{
+	width: 300px;
+	height: 300px;
+	margin-left: -100%;
+	float: right;
+	background-color: yellow;
 }
