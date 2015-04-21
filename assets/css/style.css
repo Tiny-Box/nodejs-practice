@@ -115,3 +115,36 @@ div.mainpage{
 	float: right;
 	background-color: yellow;
 }
+
+.three_main {
+	float: left;
+	width: 100%;
+	background: #D6D6D6;
+}
+.three_sub {
+	float: left;
+	position: relative;
+	width: 190px;
+	margin-left: -100%;
+	background: #E79F6D;
+}
+.three_extra {
+	float: left;
+	width: 230px;
+	margin-left: -230px;
+	background: #7BD;
+}
+.three_main-wrap {
+	margin: 0 190px 0 230px;
+}
+#bd {
+	overflow: hidden;
+}
+.three_main, .three_sub, .three_extra {
+	padding-bottom: 5000px;
+	margin-bottom: -5000px;
+}
+div {
+	margin: 0;
+	padding: 0;
+}
