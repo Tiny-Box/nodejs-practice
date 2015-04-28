@@ -148,3 +148,18 @@ div {
 	margin: 0;
 	padding: 0;
 }
+.box {
+	float: left;
+	width: 200px;
+	height: 100px;
+	margin: 2px;
+	border: solid #6AC5AC 3px;
+	position: relative;
+}
+.boxborder {
+	background-color: blue;
+	width: 100%;
+	overflow: hidden;
+}
+.after-box {
+}
