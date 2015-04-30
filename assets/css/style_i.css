@@ -554,6 +554,9 @@ h3{
     padding-top: 10px;
     font-size: 14px;
 }
+.connect {
+	line-height: 200%;
+}
 /*my blog needs some style-------------------------------------------------------*/
 .linethrough{
     text-decoration:line-through;
@@ -562,6 +565,6 @@ h3{
     margin: 0 10px;
     padding:3px 5px;
     border-radius: 5px;
-    background: #a660a7;
+    background: #7BD;
     color: #fff;
 }
